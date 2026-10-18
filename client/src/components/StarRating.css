@@ -1,0 +1,97 @@
+/* Container to mimic the form group */
+.fieldgroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Reset button */
+.rateit-reset {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 39px;
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.rateit-reset:after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 1.5px;
+    top: 6px;
+    background: url('/sprite-DzUy8pgb.svg') -555px -75px no-repeat;
+    background-size: 1200px 1530px;
+    transform: translate(10px);
+    transition: all .2s;
+    opacity: 0;
+}
+
+.rateit-reset:hover:after {
+    transform: translate(0);
+    opacity: .6;
+}
+
+/* The RateIt widget container */
+.rateit {
+    display: inline-block;
+    position: relative;
+    user-select: none;
+    -webkit-touch-callout: none;
+    height: 39px;
+    margin-bottom: 6px;
+    margin-top: 4px;
+}
+
+/* Hover parent group for showing reset */
+.rateit:hover .rateit-reset:after {
+    transform: translate(0);
+    opacity: .6;
+}
+
+/* Range container (empty stars) */
+.rateit-range {
+    position: relative;
+    display: inline-block;
+    background-image: url('/sprite-DzUy8pgb.svg');
+    background-position: -525px -420px;
+    background-size: 1200px 1530px;
+    height: 39px;
+    width: 195px;
+    cursor: pointer;
+}
+
+/* Hover and Selected layers (filled stars) */
+.rateit-hover,
+.rateit-selected {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('/sprite-DzUy8pgb.svg');
+    background-position: -525px -465px;
+    background-size: 1200px 1530px;
+    height: 39px;
+}
+
+.rateit-hover {
+    pointer-events: none;
+}
+
+/* Focus styling */
+.rateit-range:focus {
+    outline: none;
+}
